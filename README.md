@@ -4,6 +4,29 @@
 
 docker compose --env-file ./config/.env.docker up
 
+# api demo
+
+bash windows:
+## create movie
+
+curl.exe -i -X POST -H "Content-Type:application/json" -d '{  "name" : "Snatch" }' http://localhost:8080/movies
+
+## get movie
+
+curl.exe http://localhost:8080/movies/{moviedId}
+
+## upload file (default file from root dir)
+
+curl.exe -i -F image=@imageForUpload.png http://localhost:8080/movies/{movieId}/fileAttachments
+
+## get file
+
+curl.exe http://localhost:8080/movies/{movieId}/fileAttachments/{fileAttachmentId}
+
+## delete file
+
+curl.exe -i -X DELETE http://localhost:8080/movies/{movieId}/fileAttachments/{fileAttachmentId}
+
 # Project Overview
 Your task is to build an assets manager for a movies database. The system should allow the storage and delivery of assets for movies such as posters, screenshots, etc. The system should be accessible via a REST API built using Spring Boot.
 ## Requirements
