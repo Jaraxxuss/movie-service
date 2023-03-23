@@ -1,0 +1,67 @@
+databaseChangeLog:
+- changeSet:
+    id: 1679434245406-1
+    author: Jaraxxus (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: FileAttachmentPK
+            name: id
+            type: BINARY(16)
+        - column:
+            name: createdDate
+            type: datetime
+        - column:
+            name: modifiedDate
+            type: datetime
+        - column:
+            name: fileUUID
+            type: BINARY(16)
+        - column:
+            name: size
+            type: BIGINT
+        - column:
+            name: movie_id
+            type: BINARY(16)
+        tableName: FileAttachment
+- changeSet:
+    id: 1679434245406-2
+    author: Jaraxxus (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: MoviePK
+            name: id
+            type: BINARY(16)
+        - column:
+            name: createdDate
+            type: datetime
+        - column:
+            name: modifiedDate
+            type: datetime
+        - column:
+            name: name
+            type: VARCHAR(255)
+        tableName: Movie
+- changeSet:
+    id: 1679434245406-3
+    author: Jaraxxus (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: movie_id
+        baseTableName: FileAttachment
+        constraintName: FKp6uj0bw9rl4n6nw9tbbrdqadm
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: Movie
+        validate: true
+

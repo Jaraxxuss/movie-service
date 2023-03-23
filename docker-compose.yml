@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=$MYSQLDB_ROOT_PASSWORD
+      - MYSQL_DATABASE=$MYSQLDB_DATABASE
+    ports:
+      - 3306
+  app:
+    depends_on:
+      - mysql
+    image: com.setplex/movieservice
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://$MYSQLDB_HOST:3306/$MYSQLDB_DATABASE
+      - SPRING_DATASOURCE_USERNAME=$MYSQLDB_USER
+      - SPRING_DATASOURCE_PASSWORD=$MYSQLDB_ROOT_PASSWORD
+    ports:
+      - "8080:8080"
