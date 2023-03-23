@@ -63,7 +63,7 @@ public class MovieServiceTest {
     }
 
     @Test
-    public void whenSave_succesfullySaved__shouldReturnMovie() {
+    public void whenSave_successfullySaved__shouldReturnMovie() {
         // given
         var movieId = MOVIE_ID;
         var movie = new Movie();

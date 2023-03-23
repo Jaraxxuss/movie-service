@@ -11,7 +11,7 @@ services:
   app:
     depends_on:
       - mysql
-    image: com.setplex/movieservice
+    image: com.setplex/movieservice:latest
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://$MYSQLDB_HOST:3306/$MYSQLDB_DATABASE
       - SPRING_DATASOURCE_USERNAME=$MYSQLDB_USER

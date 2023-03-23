@@ -88,7 +88,7 @@ public class MovieHandlerTest {
     }
 
     @Test
-    public void whenCreateMovie__succesfullyCreated__shouldReturnCreatedStatusAndMovieLocation() throws Exception {        
+    public void whenCreateMovie__successfullyCreated__shouldReturnCreatedStatusAndMovieLocation() throws Exception {        
         // given
         var movieId = MOVIE_ID;
         var movie = new Movie();
@@ -143,7 +143,7 @@ public class MovieHandlerTest {
     }
 
     @Test
-    public void whenCreateFileAttachment__succesfullyCreated__shouldReturnCreatedStatusAndFileAttachmentLocation() throws Exception {        
+    public void whenCreateFileAttachment__successfullyCreated__shouldReturnCreatedStatusAndFileAttachmentLocation() throws Exception {        
         // given
         var movieId = MOVIE_ID;
         var fileAttachmentId = FILE_ATTACHMENT_ID;
@@ -171,7 +171,7 @@ public class MovieHandlerTest {
     }
 
     @Test
-    public void whenDeleteFileAttachment__succesfullyDeleted__shouldReturnNoContentStatus() throws Exception {        
+    public void whenDeleteFileAttachment__successfullyDeleted__shouldReturnNoContentStatus() throws Exception {        
         // given
         var movieId = MOVIE_ID;
         var fileAttachmentId = FILE_ATTACHMENT_ID;
