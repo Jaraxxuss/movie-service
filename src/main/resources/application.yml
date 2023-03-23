@@ -16,4 +16,4 @@ spring:
 folders:
     locations:
         FILE_ATTACHMENTS:
-            folder: /file-attachments
+            folder: file-attachments
